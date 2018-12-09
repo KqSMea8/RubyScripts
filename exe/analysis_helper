@@ -1,0 +1,79 @@
+#!/usr/bin/env ruby
+
+if $PROGRAM_NAME == __FILE__
+  $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+end
+
+require "analysis_helper"
+require 'optparse'
+
+options = {}
+
+def help()
+  puts "Usage: #{opts.program_name} -s log_file"
+  puts "       #{opts.program_name} -f log_file [analysis_file] [warning_file]"
+  puts "       #{opts.program_name} -d left_file right_file output_file"
+end
+
+if ARGV.length == 0
+  help
+  exit
+end
+
+mode = ARGV.first
+unless mode && ["-h", "--help", "-s", "--simple", "-f", "--filter", "-d", "--diff", "-v", "--version"].include?(mode)
+  STDERR.puts("Error: Command unknow.")
+  help
+  exit(1)
+end
+
+if mode == "-h" || mode == "--help"
+  help
+elsif mode == "-v" || mode == "--version"
+  STDOUT.puts(AnalysisHelper::VERSION)
+elsif mode == "-s" || mode == "--simple"
+  file_in_path = ARGV.at(1)
+  unless file_in_path
+    puts "Usage: #{opts.program_name} -s log_file"
+    exit(1)
+  end
+
+  AnalysisHelper.simple(file_in_path)
+
+elsif mode == "-f" || mode == "--filter"
+
+  file_in_path = ARGV.at(1)
+  unless file_in_path
+    puts "Usage: #{opts.program_name} -f log_file [analysis_file] [warning_file]"
+    exit(1)
+  end
+
+  file_analysis_out_path = ARGV.at(2)
+
+  unless file_analysis_out_path
+    file_analysis_out_path = File.basename(file_in_path, '.*') + '_analysis.txt'
+  end
+
+  file_warning_out_path = ARGV.at(3)
+
+  unless file_warning_out_path
+    file_warning_out_path = File.basename(file_in_path, '.*') + '_warning.txt'
+  end
+
+  AnalysisHelper.filter(file_in_path, file_analysis_out_path, file_warning_out_path)
+
+elsif mode == "-d" || mode == "--diff"
+  left_file_path = ARGV.at(1)
+  right_file_path = ARGV.at(2)
+  out_file_path = ARGV.at(3)
+
+  unless left_file_path && right_file_path && out_file_pat
+    puts "Usage: #{opts.program_name} -d left_file right_file output_file"
+    exit(1)
+  end
+
+  AnalysisHelper.diff(left_file_path, right_file_path, out_file_path)
+
+end
+
+exit
