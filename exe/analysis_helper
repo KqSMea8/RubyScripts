@@ -5,14 +5,12 @@ if $PROGRAM_NAME == __FILE__
 end
 
 require "analysis_helper"
-require 'optparse'
-
-options = {}
 
 def help()
-  puts "Usage: #{opts.program_name} -s log_file"
-  puts "       #{opts.program_name} -f log_file [analysis_file] [warning_file]"
-  puts "       #{opts.program_name} -d left_file right_file output_file"
+  program_name = File.basename($0, ".*")
+  puts "Usage: #{program_name} -s log_file"
+  puts "       #{program_name} -f log_file [analysis_file] [warning_file]"
+  puts "       #{program_name} -d left_file right_file output_file"
 end
 
 if ARGV.length == 0
@@ -67,7 +65,7 @@ elsif mode == "-d" || mode == "--diff"
   right_file_path = ARGV.at(2)
   out_file_path = ARGV.at(3)
 
-  unless left_file_path && right_file_path && out_file_pat
+  unless left_file_path && right_file_path && out_file_path
     puts "Usage: #{opts.program_name} -d left_file right_file output_file"
     exit(1)
   end

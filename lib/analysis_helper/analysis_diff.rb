@@ -114,6 +114,9 @@ module AnalysisHelper
       @subs.each do |x|
         @file_out.puts x.origin
       end
+
+      @file_out.flush
+      @file_out.close
     end
   end
 

@@ -97,6 +97,8 @@ module AnalysisHelper
           last_item = i
         end
       end
+      file_analysis_out.flush
+      file_analysis_out.close
       puts "Get Analysis OK."
       warnings.sort!
       last_item = IOSWarning.new("")
@@ -106,6 +108,8 @@ module AnalysisHelper
           last_item = i
         end
       end
+      file_warning_out.flush
+      file_warning_out.close
       puts "Get Warnings OK."
 
       puts "Success: 完成 高优数：#{high_priority_count}，普优数：#{low_priority_count}"
