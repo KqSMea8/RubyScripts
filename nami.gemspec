@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "analysis_helper/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "analysis_helper"
+  spec.name          = "nami"
   spec.version       = AnalysisHelper::VERSION
   spec.authors       = ["wangzhenwang"]
   spec.email         = ["wangzhenwang@bytedance.com"]
