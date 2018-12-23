@@ -59,8 +59,8 @@ end
 def read_pod_version(pod_file_path, pod_name)
   file = File.new(pod_file_path, "r")
   file.each_line do |line|
-    if line =~ /pod\w*\s\'#{pod_name}\'\s*,\s*'([\w\.]+)'/
-      return $1
+    if line =~ /(pod_source|pod_binary|pod)\s+\'#{pod_name}\'\s*,\s*'([\w\.]+)'/
+      return $2
     end
   end
   puts("pod not found!")
@@ -79,14 +79,16 @@ def checkout_pod_branch(pod_infos)
     puts("branch: #{$branch}")
   end
   pod_infos.each do |pod_info|
+    if !pod_info.version || pod_info.version.empty?
+      next
+    end
     Dir.chdir("#{$work_dir}/#{pod_info.file_name}")
     pod_current_branch = `git symbolic-ref --short -q HEAD`.strip
     pod_current_status = `git status -s`.strip
     if pod_current_branch != 'master' || !pod_current_status.empty?
       puts("#{pod_info.ext_name} not clean!")
     else
-      `git checkout toutiao_#{pod_info.version}`
-      `git checkout -b #{$branch}`
+      _ = `git checkout -b #{$branch} toutiao_#{pod_info.version}`
       puts("#{pod_info.ext_name} success!")
     end
   end
@@ -104,7 +106,9 @@ def update_podfile(pod_infos)
   Dir.chdir("#{$work_dir}/#{$projects[$project_index]}/Article")
   text = File.read('Podfile')
   pod_infos.each do |pod_info|
-    text.gsub!(/(pod_source|pod_binary|pod)\s+\'#{pod_info.name}\',\s+\'[\w\.]+\'/, "pod_source '#{pod_info.name}', git:'#{pod_info.git_path}', branch:'#{pod_info.git_branch}'")
+    if pod_info.git_branch != 'master'
+      text.gsub!(/(pod_source|pod_binary|pod)\s+\'#{pod_info.name}\'\s*,\s*\'[\w\.]+\'/, "pod_source '#{pod_info.name}', git:'#{pod_info.git_path}', branch:'#{pod_info.git_branch}'")
+    end
   end
   File.write('Podfile', text)
   puts("Update podfile end.")
