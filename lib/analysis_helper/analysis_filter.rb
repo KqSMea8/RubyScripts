@@ -73,7 +73,7 @@ module AnalysisHelper
           # do nothing
         else
           if line.include?(' warning: ')
-            l = line.delete_prefix('/Users/nami/git/tt_app_ios4/')
+            l = line.sub(/\/Users\/nami\/git\/tt_app_ios\d?\//, '')
             item = IOSWarning.new(l)
             is_high_priority = is_analyze_warning && is_high_priority_warning(item)
 
