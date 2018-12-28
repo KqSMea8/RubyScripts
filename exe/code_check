@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+if $PROGRAM_NAME == __FILE__
+  $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+end
+
+require "code_check"
+
+root_path = ARGV.first
+if root_path
+  Dir.chdir(root_path.safe_path)
+end
+
+begin
+  analyze_main_project_files
+  analyze_dev_pod_files
+rescue
+  puts("error:#{$!} at:#{$@}")
+end
