@@ -59,7 +59,7 @@ end
 def read_pod_version(pod_file_path, pod_name)
   file = File.new(pod_file_path, "r")
   file.each_line do |line|
-    if line =~ /(pod_source|pod_binary|pod)\s+\'#{pod_name}\'\s*,\s*'([\w\.]+)'/
+    if line =~ /(pod_source|pod_binary|pod)\s+\'#{pod_name}\'\s*,\s*'([\w\.\-_]+)'/
       return $2
     end
   end
@@ -107,7 +107,7 @@ def update_podfile(pod_infos)
   text = File.read('Podfile')
   pod_infos.each do |pod_info|
     if pod_info.git_branch != 'master'
-      text.gsub!(/(pod_source|pod_binary|pod)\s+\'#{pod_info.name}\'\s*,\s*\'[\w\.]+\'/, "pod_source '#{pod_info.name}', git:'#{pod_info.git_path}', branch:'#{pod_info.git_branch}'")
+      text.gsub!(/(pod_source|pod_binary|pod)\s+\'#{pod_info.name}\'\s*,\s*\'[\w\.\-_]+\'/, "pod_source '#{pod_info.name}', git:'#{pod_info.git_path}', branch:'#{pod_info.git_branch}'")
     end
   end
   File.write('Podfile', text)

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8f7652ac-435e-4e04-ac1a-ddad1e1daeb8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/analysis_helper/analysis_filter.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/analysis_helper/analysis_filter.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/dev_pod.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/dev_pod.rb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,12 +12,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/dev_pod.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
+            <state relative-caret-position="215">
+              <caret line="109" column="84" selection-start-line="109" selection-start-column="84" selection-end-line="109" selection-end-column="84" />
             </state>
           </provider>
         </entry>
@@ -26,16 +26,43 @@
         <entry file="file://$PROJECT_DIR$/lib/analysis_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="540">
-              <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/analysis_helper/analysis_filter.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
+            <state relative-caret-position="1125">
               <caret line="75" column="67" selection-start-line="75" selection-start-column="67" selection-end-line="75" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exe/dev_pod">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/analysis_helper/analysis_diff.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1605">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/exe/code_check.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -43,7 +70,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$APPLICATION_HOME_DIR$/rubystubs25/string.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
+            <state relative-caret-position="23295">
               <caret line="1553" column="12" selection-start-line="1553" selection-start-column="8" selection-end-line="1553" selection-end-column="12" />
             </state>
           </provider>
@@ -51,12 +78,20 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Ruby Class Template" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>match(</find>
       <find>analysis_file_path</find>
       <find>close</find>
       <find>flush</find>
+      <find>chdir</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -73,8 +108,9 @@
         <option value="$PROJECT_DIR$/lib/analysis_helper.rb" />
         <option value="$PROJECT_DIR$/exe/nami" />
         <option value="$PROJECT_DIR$/exe/dev_pod" />
-        <option value="$PROJECT_DIR$/lib/dev_pod.rb" />
         <option value="$PROJECT_DIR$/lib/analysis_helper/analysis_filter.rb" />
+        <option value="$PROJECT_DIR$/exe/code_check.rb" />
+        <option value="$PROJECT_DIR$/lib/dev_pod.rb" />
       </list>
     </option>
   </component>
@@ -164,7 +200,10 @@
       <workItem from="1545364199199" duration="570000" />
       <workItem from="1545381324604" duration="1847000" />
       <workItem from="1545545707608" duration="137000" />
-      <workItem from="1545643685100" duration="230000" />
+      <workItem from="1545643685100" duration="808000" />
+      <workItem from="1545810340950" duration="537000" />
+      <workItem from="1545814372423" duration="524000" />
+      <workItem from="1545983310421" duration="149000" />
     </task>
     <task id="LOCAL-00001" summary="第一次提交">
       <created>1544327481850</created>
@@ -201,17 +240,24 @@
       <option name="project" value="LOCAL" />
       <updated>1545545834059</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="analysis_helper 调整">
+      <created>1545643938304</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545643938304</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14704000" />
+    <option name="totallyTimeSpent" value="16492000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2771673" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2832723" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -241,7 +287,8 @@
     <MESSAGE value="第二次提交" />
     <MESSAGE value="新增dev_pod" />
     <MESSAGE value="dev_pod调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev_pod调整" />
+    <MESSAGE value="analysis_helper 调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="analysis_helper 调整" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/bin/setup">
@@ -271,24 +318,10 @@
     <entry file="file://$PROJECT_DIR$/lib/analysis_helper/version.rb">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/analysis_helper/analysis_diff.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/rubystubs25/file.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16455">
           <caret line="1097" column="18" selection-start-line="1097" selection-start-column="13" selection-end-line="1097" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exe/dev_pod">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -302,31 +335,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/dev_pod.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="100" column="50" selection-start-line="100" selection-start-column="50" selection-end-line="100" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/analysis_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
-          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs25/string.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="1553" column="12" selection-start-line="1553" selection-start-column="8" selection-end-line="1553" selection-end-column="12" />
+          <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/analysis_helper/analysis_filter.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
+        <state relative-caret-position="1125">
           <caret line="75" column="67" selection-start-line="75" selection-start-column="67" selection-end-line="75" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exe/dev_pod">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/analysis_helper/analysis_diff.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/rubystubs25/string.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23295">
+          <caret line="1553" column="12" selection-start-line="1553" selection-start-column="8" selection-end-line="1553" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exe/code_check.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="139" column="12" selection-start-line="139" selection-start-column="12" selection-end-line="139" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/dev_pod.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="109" column="84" selection-start-line="109" selection-start-column="84" selection-end-line="109" selection-end-column="84" />
         </state>
       </provider>
     </entry>
